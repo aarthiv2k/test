@@ -117,14 +117,6 @@ body {
 
 <div class="header">
   <h1>My Website</h1>
-    <section>
-  <img class="mySlides" src=https://www.w3schools.com/howto/img_band_chicago.jpg
-  style="width:100%">
-  <img class="mySlides" src=https://www.w3schools.com/howto/img_band_ny.jpg
-  style="width:100%">
-  <img class="mySlides" src=https://www.w3schools.com/howto/img_band_la.jpg
-  style="width:100%">
-</section>
   <p>A website created by me.</p>
 </div>
 
@@ -165,6 +157,24 @@ body {
 <div class="footer">
   <h2>Footer</h2>
 </div>
+    <script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000);
+}
+</script>
+
 
 </body>
 </html>
